@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+ main
 require './../config/db.php';
 
 if(isset($_POST['submit'])) {
@@ -12,10 +13,21 @@ if(isset($_POST['submit'])) {
         $data = mysqli_fetch_assoc($user);
         
         if(password_verify($password,$data['password'])) {
+
             echo "selamat datang ".$data['name'];
             die;
 
             //otorisasi
+            $_SESSION['name'] = $data['name'];
+            $_SESSION['role'] = $data['role'];
+           
+            if($_SESSION['role'] == 'admin') {
+                
+                header('location:./../admin.php');
+            } else {
+                header('location:./../profile.php');
+            }
+          main
         } else {
             echo "password salah";
             die;
