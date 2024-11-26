@@ -1,7 +1,9 @@
 <?php
 
-session_start();
+pertemuan-6
 
+session_start();
+ main
 require './../config/db.php';
 
 if(isset($_POST['submit'])) {
@@ -29,6 +31,9 @@ if(isset($_POST['submit'])) {
         
     $users = mysqli_query($db_connect,"INSERT INTO users (name,email, password,created_at) VALUES
                             ('$name','$email','$password','$created_at')");
+ pertemuan-6
+
+    echo "registrasi berhasil";
     
     $getuserdata = mysqli_query($db_connect, "SELECT name, role FROM users WHERE email = '$email'");
     $sessiondata = mysqli_fetch_assoc($getuserdata);
@@ -39,4 +44,5 @@ if(isset($_POST['submit'])) {
     header('location:./../profile.php');
 
     // echo "registrasi berhasil";
+ main
 }
