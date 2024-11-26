@@ -1,8 +1,11 @@
 <?php
 
+ pertemuan-5
+
 pertemuan-6
 
 session_start();
+ main
  main
 require './../config/db.php';
 
@@ -31,6 +34,10 @@ if(isset($_POST['submit'])) {
         
     $users = mysqli_query($db_connect,"INSERT INTO users (name,email, password,created_at) VALUES
                             ('$name','$email','$password','$created_at')");
+ pertemuan-5
+
+    echo "registrasi berhasil";
+
  pertemuan-6
 
     echo "registrasi berhasil";
@@ -44,5 +51,6 @@ if(isset($_POST['submit'])) {
     header('location:./../profile.php');
 
     // echo "registrasi berhasil";
+ main
  main
 }

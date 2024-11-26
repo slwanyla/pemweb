@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
+pertemuan-5
+-- Generation Time: Oct 22, 2023 at 10:51 PM
+
 -- Generation Time: Nov 03, 2023 at 02:59 AM
+ main
 -- Server version: 8.0.30
 -- PHP Version: 7.4.33
 
@@ -24,6 +28,8 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+ pertemuan-5
+
 -- Table structure for table `products`
 --
 
@@ -49,21 +55,32 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `created_at`, `updated_a
 -- --------------------------------------------------------
 
 --
+ main
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
+ pertemuan-5
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `role` enum('admin','user') NOT NULL DEFAULT 'user',
+  `password` varchar(255) NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+
   `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `role` enum('admin','user') COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'user',
   `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `photo` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+ main
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+ pertemuan-5
+
 -- Dumping data for table `users`
 --
 
@@ -71,16 +88,20 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `password`, `photo`, `create
 (5, 'Yusuf Eka Wicaksana', 'ekayusuf.wicaksana@gmail.com', 'user', '$2y$10$rLNoxFGQoNddoiWy/ebYdOkjhU0ff14xHdXPc2yJIi2APAWvQ.Cra', NULL, '2023-10-26 13:45:09', NULL);
 
 --
+main
 -- Indexes for dumped tables
 --
 
 --
+ pertemuan-5
+
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+ main
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -92,6 +113,12 @@ ALTER TABLE `users`
 --
 
 --
+< pertemuan-5
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
@@ -102,6 +129,7 @@ ALTER TABLE `products`
 --
 ALTER TABLE `users`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ main
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

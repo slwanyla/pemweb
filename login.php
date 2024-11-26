@@ -1,6 +1,10 @@
 <?php
+pertemuan-5
+
+
 session_start();
  main
+main
 require './../config/db.php';
 
 if(isset($_POST['submit'])) {
@@ -13,11 +17,16 @@ if(isset($_POST['submit'])) {
         $data = mysqli_fetch_assoc($user);
         
         if(password_verify($password,$data['password'])) {
+ pertemuan-5
 
+
+ main
             echo "selamat datang ".$data['name'];
             die;
 
             //otorisasi
+ pertemuan-5
+
             $_SESSION['name'] = $data['name'];
             $_SESSION['role'] = $data['role'];
            
@@ -28,6 +37,7 @@ if(isset($_POST['submit'])) {
                 header('location:./../profile.php');
             }
           main
+ main
         } else {
             echo "password salah";
             die;
